@@ -5,7 +5,7 @@ build_script:
   - ps: ./build.ps1 -Target Build
 
 artifacts:
-  - path: '**\*.nupkg'
+  - path: '**\POGOProtos.*.nupkg'
 
 deploy:
   - provider: NuGet

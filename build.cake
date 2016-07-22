@@ -11,7 +11,7 @@ Task("Nuget-Restore")
     });
 });
 
-Task("Proto")
+Task("Protos")
     .IsDependentOn("Nuget-Restore")
     .Does(() =>
 {
@@ -35,11 +35,22 @@ Task("Proto")
 });
 
 Task("Build")
-    //.IsDependentOn("Protos")
+    .IsDependentOn("Protos")
     .Does(() =>
 {
-    DotNetCoreRestore("./src/POGOProtos");
-    DotNetCorePack("./src/POGOProtos");
+    var projectPath = "./src/POGOProtos";
+
+    DotNetCoreRestore(projectPath);
+
+    var buildSettings = new DotNetCorePackSettings();
+
+    if (AppVeyor.IsRunningOnAppVeyor && AppVeyor.Environment.Repository.Branch.Contains("develop"))
+    {
+        var versionNumber = AppVeyor.Environment.Build.Number;
+        buildSettings.VersionSuffix = string.Format("beta{0:0000}", versionNumber);
+    }
+    
+    DotNetCorePack(projectPath, buildSettings);
 });
 
 
