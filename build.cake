@@ -38,6 +38,7 @@ Task("Build")
     //.IsDependentOn("Protos")
     .Does(() =>
 {
+    DotNetCoreRestore("./src/POGOProtos");
     DotNetCorePack("./src/POGOProtos");
 });
 
