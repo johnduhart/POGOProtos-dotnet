@@ -1,13 +1,28 @@
 ﻿{
+  "name": "POGOProtos",
   "version": "1.0.0-*",
+  "description": "Compiled ProtoBufs for Pokemon Go",
+  "authors": [ "John Du Hart" ],
+
+  "packOptions": {
+    "summary": "Compiled version of ProtoBufs found here: https://github.com/AeonLucid/POGOProtos"
+  },
 
   "dependencies": {
-    "NETStandard.Library": "1.6.0"
+    "Google.Protobuf": "3.0.0-beta4"
   },
 
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
-    }
+    "netstandard1.3": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": {
+          "version": "1.6.0",
+          "type": "platform"
+        }
+      }
+    },
+
+    "net45": {}
   }
 }

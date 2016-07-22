@@ -243,3 +243,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Build tools
+tools/
+
+# Compiled protos
+src/POGOProtos/Protos/*
+!_.gitkeep
