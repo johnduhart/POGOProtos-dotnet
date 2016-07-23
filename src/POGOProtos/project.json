@@ -1,6 +1,6 @@
 ﻿{
   "name": "POGOProtos",
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
   "description": "Compiled ProtoBufs for Pokemon Go",
   "authors": [ "John Du Hart" ],
 
