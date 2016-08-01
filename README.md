@@ -6,4 +6,6 @@ POGOProtos
 Compiled ProtoBufs for PokémonGo. [Source from here.](https://github.com/AeonLucid/POGOProtos)
 
 Command to Build:
+```
 ./build.ps1 -Target Build
+```
