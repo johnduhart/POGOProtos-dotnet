@@ -6,7 +6,7 @@ Task("Nuget-Restore")
     NuGetInstall("Google.Protobuf.Tools", new NuGetInstallSettings {
         ExcludeVersion = true,
         OutputDirectory = "./tools",
-        Version = "3.0.0-beta3",
+        Version = "3.0.0-beta4",
         Prerelease = true
     });
 });
